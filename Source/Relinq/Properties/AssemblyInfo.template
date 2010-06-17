@@ -1,14 +1,23 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Relinq.Properties;
 
-[assembly: AssemblyTitle("Relinq")]
 [assembly: AssemblyProduct("Relinq")]
+[assembly: AssemblyTitle("Relinq (" +
+    "built from $"CODEBASE"$ (rev=$REVISION$, hash=$CODEHASH$), " +
+    "built at $TIMESTAMP$, " +
+    "built by $USERHASH$, " +
+    "built on $MACHINEHASH$)")]
 [assembly: AssemblyCopyright("Copyright © 2008-2010 ObjectMeet")]
 
 [assembly: ComVisible(false)]
 [assembly: InternalsVisibleTo("Relinq.Playground")]
 
 [assembly: Guid("0b5375c8-7f84-4c30-849a-537fe42f9c89")]
-[assembly: AssemblyVersion("1.5.$WCREV$.0")]
-[assembly: AssemblyFileVersion("1.5.$WCREV$.0")]
+[assembly: AssemblyVersion("1.5.*")]
+[assembly: AssemblyBuiltFrom(Repository = "$"CODEBASE"$", Revision = "$REVISION$", CodebaseHash = "$CODEHASH$")]
+[assembly: AssemblyBuiltAt(Timestamp = "$TIMESTAMP$")]
+[assembly: AssemblyBuiltBy(UserHash = "$USERHASH$")]
+[assembly: AssemblyBuiltOn(MachineHash = "$MACHINEHASH$")]
+

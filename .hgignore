@@ -1,0 +1,7 @@
+glob:*.user
+glob:*.suo
+glob:Source/Relinq/bin/
+glob:Source/Relinq/obj/
+glob:Source/Relinq.Playground/bin/
+glob:Source/Relinq.Playground/obj/
+glob:*AssemblyInfo.cs

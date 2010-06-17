@@ -112,6 +112,10 @@
     <Compile Include="Helpers\Collections\ItemListChangeEventArgs.cs" />
     <Compile Include="Helpers\Collections\ItemListChangeEventHandler.cs" />
     <Compile Include="Helpers\Reflection\ComprehensiveLoggingHelper.cs" />
+    <Compile Include="Properties\AssemblyBuiltAtAttribute.cs" />
+    <Compile Include="Properties\AssemblyBuiltByAttribute.cs" />
+    <Compile Include="Properties\AssemblyBuiltFromAttribute.cs" />
+    <Compile Include="Properties\AssemblyBuiltOnAttribute.cs" />
     <Compile Include="Script\Compilation\CompilationContext.cs" />
     <Compile Include="Script\Semantics\Literals\JsonDeserializer.cs" />
     <Compile Include="Script\Syntax\Expressions\ExpressionsHelper.cs" />
@@ -294,7 +298,6 @@
   </Target>
   -->
   <PropertyGroup>
-    <PreBuildEvent>echo Synchronize assembly revision number with SVN revision
-"$(ProjectDir)..\ThirdPartyStuff\tortoisesVN\subwcrev.bat" "$(ProjectDir)." "$(ProjectDir)Properties\AssemblyInfo.template" "$(ProjectDir)Properties\AssemblyInfo.cs"</PreBuildEvent>
+    <PreBuildEvent>"$(ProjectDir)..\ThirdPartyStuff\autoversioner\AutoVersioner.exe" "$(ProjectDir)$(ProjectFileName)" "$(ProjectDir)Properties\AssemblyInfo.template" "$(ProjectDir)Properties\AssemblyInfo.cs"</PreBuildEvent>
   </PropertyGroup>
 </Project>
