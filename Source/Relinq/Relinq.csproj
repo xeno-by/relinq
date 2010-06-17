@@ -1,0 +1,300 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1823BB22-494B-46C5-BDD5-D5B900029161}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Relinq</RootNamespace>
+    <AssemblyName>Relinq</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <PublishUrl>http://localhost/Relinq/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>618</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.1.0.39271, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdPartyStuff\antlr\c# runtime\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Exceptions\CSharpToJS\ScriptBuilderException.cs" />
+    <Compile Include="Exceptions\Integration\CSharpToJSIntegrationException.cs" />
+    <Compile Include="Exceptions\Integration\IntegrationExceptionType.cs" />
+    <Compile Include="Exceptions\Integration\IntegrationException.cs" />
+    <Compile Include="Exceptions\Integration\JSToCSharpIntegrationException.cs" />
+    <Compile Include="Exceptions\JsonSerializer\JsonDeserializationException.cs" />
+    <Compile Include="Exceptions\JsonSerializer\JsonDeserializationExceptionType.cs" />
+    <Compile Include="Exceptions\JsonSerializer\JsonSerializationExceptionType.cs" />
+    <Compile Include="Exceptions\JsonSerializer\JsonSerializationException.cs" />
+    <Compile Include="Exceptions\JSToCSharp\CSharpBuilder\CannotResolveQuasiTypeFromContextException.cs" />
+    <Compile Include="Exceptions\JSToCSharp\CSharpBuilder\CSharpBuilderException.cs" />
+    <Compile Include="Exceptions\JSToCSharp\Parser\ParserException.cs" />
+    <Compile Include="Exceptions\JSToCSharp\TypeInference\CannotForgeAnonymousTypeException.cs" />
+    <Compile Include="Exceptions\JSToCSharp\TypeInference\ConstantInferenceFailedException.cs" />
+    <Compile Include="Exceptions\JSToCSharp\TypeInference\InconsistentConditionalExpression.cs" />
+    <Compile Include="Exceptions\JSToCSharp\TypeInference\MethodGroupResolutionFailedException.cs" />
+    <Compile Include="Exceptions\JSToCSharp\TypeInference\MethodResolution\GenericArgumentsInferenceException.cs" />
+    <Compile Include="Exceptions\JSToCSharp\TypeInference\MethodResolution\GenericArgumentsInferenceExceptionType.cs" />
+    <Compile Include="Exceptions\JSToCSharp\TypeInference\MethodResolution\MethodMatchingException.cs" />
+    <Compile Include="Exceptions\JSToCSharp\TypeInference\MethodResolution\MethodMatchingExceptionType.cs" />
+    <Compile Include="Exceptions\JSToCSharp\TypeInference\MethodResolution\MethodResolutionException.cs" />
+    <Compile Include="Exceptions\JSToCSharp\TypeInference\NoSuchIndexerException.cs" />
+    <Compile Include="Exceptions\JSToCSharp\TypeInference\NoSuchMemberException.cs" />
+    <Compile Include="Exceptions\JSToCSharp\TypeInference\NoSuchOperatorException.cs" />
+    <Compile Include="Exceptions\JSToCSharp\TypeInference\RedeclaredVariableException.cs" />
+    <Compile Include="Exceptions\JSToCSharp\TypeInference\UndeclaredVariableException.cs" />
+    <Compile Include="Exceptions\JSToCSharp\TypeInference\CannotBeInvokedException.cs" />
+    <Compile Include="Exceptions\JSToCSharp\TypeInference\VariableOverridesKeywordException.cs" />
+    <Compile Include="Exceptions\LinqVisitor\LinqVisitorException.cs" />
+    <Compile Include="Exceptions\Core\IncludeInMessageAttribute.cs" />
+    <Compile Include="Exceptions\Core\RelinqException.cs" />
+    <Compile Include="Exceptions\CSharpToJS\CSharpToJSException.cs" />
+    <Compile Include="Exceptions\CSharpToJS\CSharpToJSExceptionType.cs" />
+    <Compile Include="Exceptions\LinqVisitor\UnexpectedNodeException.cs" />
+    <Compile Include="Exceptions\LinqVisitor\UnsupportedNodeException.cs" />
+    <Compile Include="Exceptions\JSToCSharp\JSToCSharpException.cs" />
+    <Compile Include="Exceptions\JSToCSharp\JSToCSharpExceptionType.cs" />
+    <Compile Include="Exceptions\JSToCSharp\Parser\SemanticErrorException.cs" />
+    <Compile Include="Exceptions\JSToCSharp\Parser\SyntaxErrorException.cs" />
+    <Compile Include="Exceptions\JSToCSharp\Parser\RecognitionExceptionHelper.cs" />
+    <Compile Include="Exceptions\JSToCSharp\TypeInference\TypeInferenceException.cs" />
+    <Compile Include="Helpers\Assurance\AssuranceFailedException.cs" />
+    <Compile Include="Helpers\Assurance\AssuranceTools.cs" />
+    <Compile Include="Helpers\Collections\EnumerableExtensions.cs" />
+    <Compile Include="Helpers\Collections\InitOnlyDictionary.cs" />
+    <Compile Include="Helpers\Collections\ItemListChangeAction.cs" />
+    <Compile Include="Helpers\Collections\ItemListChangeEventArgs.cs" />
+    <Compile Include="Helpers\Collections\ItemListChangeEventHandler.cs" />
+    <Compile Include="Helpers\Reflection\ComprehensiveLoggingHelper.cs" />
+    <Compile Include="Script\Compilation\CompilationContext.cs" />
+    <Compile Include="Script\Semantics\Literals\JsonDeserializer.cs" />
+    <Compile Include="Script\Syntax\Expressions\ExpressionsHelper.cs" />
+    <Compile Include="Helpers\Strings\LineCharIndex.cs" />
+    <Compile Include="Helpers\Reflection\AttributeHelper.cs" />
+    <Compile Include="Helpers\Reflection\BF.cs" />
+    <Compile Include="Helpers\Reflection\ConversionsHelper.cs" />
+    <Compile Include="Helpers\Reflection\GenericsHelper.cs" />
+    <Compile Include="Helpers\Reflection\MethodRedirectionsHelper.cs" />
+    <Compile Include="Helpers\Strings\Span.cs" />
+    <Compile Include="Helpers\StructuralTrees\MethodStructuralTree.cs" />
+    <Compile Include="Helpers\StructuralTrees\TypeStructuralTree.cs" />
+    <Compile Include="Helpers\Reflection\EmitHelper.cs" />
+    <Compile Include="Helpers\Strings\StringHelper.cs" />
+    <Compile Include="Linq\LinqVisitorExtensions.cs" />
+    <Compile Include="Script\Compilation\EngineAspects\TypeInferenceHistoryEntry.cs" />
+    <Compile Include="Script\Compilation\EngineAspects\TypeInferenceProxy.cs" />
+    <Compile Include="Script\Compilation\CSharpExpressionTreeBuilder.cs" />
+    <Compile Include="Script\Compilation\OperatorsCompilationHelper.cs" />
+    <Compile Include="Script\Compilation\RelinqScriptExpressionHelper.cs" />
+    <Compile Include="Script\Compilation\EngineAspects\TypeInferenceEngineCache.cs" />
+    <Compile Include="Script\Compilation\EngineAspects\TypeInferenceOperationKey.cs" />
+    <Compile Include="Script\Integration\IntegrationContext.cs" />
+    <Compile Include="Script\Semantics\Casts\Cast.cs" />
+    <Compile Include="Script\Semantics\Casts\CastHelper.cs" />
+    <Compile Include="Script\Semantics\Closures\Closure.cs" />
+    <Compile Include="Script\Semantics\Closures\ClosureHelper.cs" />
+    <Compile Include="Script\Compilation\MethodRedirection\RedirectToAttribute.cs" />
+    <Compile Include="Script\Compilation\SignatureValidation\Core\SignatureValidationHelper.cs" />
+    <Compile Include="Script\Semantics\Literals\AuxiliaryTypes\ListConversions.cs" />
+    <Compile Include="Script\Semantics\TypeInference\GenericArgsInference.cs" />
+    <Compile Include="Script\Semantics\TypeInference\ResolvedSignature.cs" />
+    <Compile Include="Script\Semantics\TypeInference\XArgsHelper.cs" />
+    <Compile Include="Script\Semantics\TypeSystem\Anonymous\DynamicAssemblyHolder.cs" />
+    <Compile Include="Script\Semantics\TypeSystem\Lambda.cs" />
+    <Compile Include="Script\Semantics\Lifting\LiftingRules.cs" />
+    <Compile Include="Script\Semantics\Lifting\LiftedAttribute.cs" />
+    <Compile Include="Helpers\Collections\ReadOnlyDictionary.cs" />
+    <Compile Include="Helpers\Collections\TrackableList.cs" />
+    <Compile Include="Linq\Preprocessing\Inliner.cs" />
+    <Compile Include="Script\Semantics\Lookup\HidingMethodsHelper.cs" />
+    <Compile Include="Script\Semantics\Lookup\LookupImplicitCastsHelper.cs" />
+    <Compile Include="Script\Semantics\Lookup\LookupIndexersHelper.cs" />
+    <Compile Include="Script\Semantics\Lookup\LookupOperatorsHelper.cs" />
+    <Compile Include="Script\Semantics\TypeInference\ResolvedInvocation.cs" />
+    <Compile Include="Script\Semantics\TypeInference\TypeInferenceContext.cs" />
+    <Compile Include="Script\Semantics\TypeInference\TypeInferenceImplicitCasts.cs" />
+    <Compile Include="Script\Semantics\TypeInference\TypeInferenceMethods.cs" />
+    <Compile Include="Script\Compilation\SignatureValidation\IsNullAttribute.cs" />
+    <Compile Include="Script\Compilation\SignatureValidation\IsNullableAttribute.cs" />
+    <Compile Include="Script\Semantics\Operators\PredefinedOperators.cs" />
+    <Compile Include="Script\Semantics\Operators\Signatures\ArithmeticSignatures.cs" />
+    <Compile Include="Script\Compilation\SignatureValidation\IsClassAttribute.cs" />
+    <Compile Include="Script\Compilation\SignatureValidation\IsDelegateAttribute.cs" />
+    <Compile Include="Script\Compilation\SignatureValidation\IsEnumAttribute.cs" />
+    <Compile Include="Script\Compilation\SignatureValidation\IsStructAttribute.cs" />
+    <Compile Include="Script\Compilation\SignatureValidation\Core\SignatureInspectionOptions.cs" />
+    <Compile Include="Script\Compilation\SignatureValidation\Core\TrapAttribute.cs" />
+    <Compile Include="Script\Semantics\Operators\Signatures\BitwiseSignatures.cs" />
+    <Compile Include="Script\Semantics\Operators\Signatures\EqualitySignatures.cs" />
+    <Compile Include="Script\Semantics\Operators\Signatures\LogicalSignatures.cs" />
+    <Compile Include="Script\Semantics\Operators\PredefinedOperatorAttribute.cs" />
+    <Compile Include="Script\Compilation\SignatureValidation\Core\SignatureValidWhenAttribute.cs" />
+    <Compile Include="Script\Semantics\Operators\Signatures\SpecialSignatures.cs" />
+    <Compile Include="Script\Semantics\TypeSystem\This.cs" />
+    <Compile Include="Script\Semantics\TypeSystem\UnknownStringizedObject.cs" />
+    <Compile Include="Script\Semantics\Literals\JsonStringHelper.cs" />
+    <Compile Include="Script\Semantics\Lookup\LookupBaseTypesHelper.cs" />
+    <Compile Include="Script\Semantics\Lookup\LookupMemberAccessHelper.cs" />
+    <Compile Include="Script\Semantics\TypeInference\TypeInferenceCache.cs" />
+    <Compile Include="Script\Semantics\TypeInference\TypeInferenceConstants.cs" />
+    <Compile Include="Script\Semantics\TypeSystem\ClrType.cs" />
+    <Compile Include="Script\Semantics\TypeSystem\RelinqScriptType.cs" />
+    <Compile Include="Script\Semantics\TypeSystem\MethodGroup.cs" />
+    <Compile Include="Script\Semantics\TypeSystem\Null.cs" />
+    <Compile Include="Script\Semantics\TypeSystem\UnknownList.cs" />
+    <Compile Include="Script\Semantics\TypeSystem\UnknownConstant.cs" />
+    <Compile Include="Script\Semantics\TypeSystem\UnknownPropertyBag.cs" />
+    <Compile Include="Script\Semantics\TypeSystem\Variant.cs" />
+    <Compile Include="Script\Semantics\UserDefinedCasts\UserDefinedImplicitCastsHelper.cs" />
+    <Compile Include="Script\Semantics\UserDefinedOperators\UserDefinedOperatorsHelper.cs" />
+    <Compile Include="Script\Syntax\Expressions\IndexerExpression.cs" />
+    <Compile Include="Script\Syntax\Operators\OperatorsReference.cs" />
+    <Compile Include="Script\Syntax\SyntaxReference\EcmaScriptV3Syntax.cs" />
+    <Compile Include="Script\Semantics\Literals\AuxiliaryTypes\Grouping.cs" />
+    <Compile Include="Script\Semantics\Literals\Metadata\DefaultSerializationMetadata.cs" />
+    <Compile Include="Script\Semantics\Literals\Metadata\ITypeSerializationMetadata.cs" />
+    <Compile Include="Script\Semantics\Literals\Metadata\JsonPropertyAttribute.cs" />
+    <Compile Include="Script\Semantics\Literals\Metadata\MetadataRepository.cs" />
+    <Compile Include="Linq\LinqVisitor.cs" />
+    <Compile Include="Helpers\BoolHelper.cs" />
+    <Compile Include="Helpers\AntlrHelper.cs" />
+    <Compile Include="Linq\Preprocessing\CoalesceHandler.cs" />
+    <Compile Include="Script\Syntax\Expressions\InvokeExpression.cs" />
+    <Compile Include="Script\Syntax\Expressions\OperatorExpression.cs" />
+    <Compile Include="Script\Syntax\Expressions\RelinqScriptExpression.cs" />
+    <Compile Include="Script\Syntax\Expressions\ConditionalExpression.cs" />
+    <Compile Include="Script\Syntax\Expressions\ExpressionType.cs" />
+    <Compile Include="Script\Syntax\Expressions\MemberAccessExpression.cs" />
+    <Compile Include="Script\Syntax\Expressions\NewExpression.cs" />
+    <Compile Include="Script\Syntax\Expressions\KeywordExpression.cs" />
+    <Compile Include="Script\Syntax\Expressions\LambdaExpression.cs" />
+    <Compile Include="Script\Syntax\Expressions\ConstantExpression.cs" />
+    <Compile Include="Script\Syntax\Expressions\VariableExpression.cs" />
+    <Compile Include="Script\Compilation\RelinqScriptParser.cs" />
+    <Compile Include="Linq\Evaluation\Evaluator.cs" />
+    <Compile Include="Linq\Preprocessing\Funcletizer.cs" />
+    <Compile Include="Script\Semantics\Literals\AuxiliaryTypes\GroupingImpl.cs" />
+    <Compile Include="Infrastructure\Client\Beans\Bean.cs" />
+    <Compile Include="Infrastructure\Client\DataContexts\ClientDataContext.cs" />
+    <Compile Include="TransformationFramework.cs" />
+    <Compile Include="Infrastructure\Client\Beans\IBean.cs" />
+    <Compile Include="Infrastructure\Client\Beans\Query.cs" />
+    <Compile Include="Script\Semantics\TypeSystem\Anonymous\AnonymousTypesHelper.cs" />
+    <Compile Include="Script\Semantics\TypeSystem\Anonymous\AnonymousTypeBuilder.cs" />
+    <Compile Include="Script\Semantics\TypeSystem\Anonymous\AnonymousTypesCache.cs" />
+    <Compile Include="Script\Semantics\Lifting\DynamicAssemblyHolder.cs" />
+    <Compile Include="Script\Semantics\TypeSystem\Anonymous\SampleAnonymousType.cs" />
+    <Compile Include="Helpers\Reflection\CastHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helpers\Reflection\ClrOperators.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Script\Syntax\Operators\OperatorType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helpers\Reflection\FunctionTypesHelper.cs" />
+    <Compile Include="Helpers\StructuralTrees\GenericArgsMappingHelper.cs" />
+    <Compile Include="Helpers\Reflection\ReflectionHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helpers\Reflection\ClassificationHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helpers\StructuralTrees\TypeStructuralTreeHelper.cs" />
+    <Compile Include="Script\RelinqScriptBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Script\Semantics\Literals\JsonSerializer.cs" />
+    <Compile Include="Script\Semantics\Literals\DeserializationHelper.cs" />
+    <Compile Include="Infrastructure\Shared\RemoteTransportMock.cs" />
+    <Compile Include="Infrastructure\Server\DataContexts\ServerDataContext.cs" />
+    <Compile Include="Script\Syntax\Grammar\EcmaScriptV3Lexer.cs" />
+    <Compile Include="Script\Syntax\Grammar\EcmaScriptV3Parser.cs" />
+    <Compile Include="Script\RelinqScriptCompiler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Script\Compilation\TypeInferenceEngine.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AssemblyInfo.template" />
+    <None Include="Script\Syntax\Grammar\EcmaScriptV3.g" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Exceptions\Guideline.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>echo Synchronize assembly revision number with SVN revision
+"$(ProjectDir)..\ThirdPartyStuff\tortoisesVN\subwcrev.bat" "$(ProjectDir)." "$(ProjectDir)Properties\AssemblyInfo.template" "$(ProjectDir)Properties\AssemblyInfo.cs"</PreBuildEvent>
+  </PropertyGroup>
+</Project>

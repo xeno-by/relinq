@@ -1,0 +1,14 @@
+﻿using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+[assembly: AssemblyTitle("Relinq")]
+[assembly: AssemblyProduct("Relinq")]
+[assembly: AssemblyCopyright("Copyright © 2008-2010 ObjectMeet")]
+
+[assembly: ComVisible(false)]
+[assembly: InternalsVisibleTo("Relinq.Playground")]
+
+[assembly: Guid("0b5375c8-7f84-4c30-849a-537fe42f9c89")]
+[assembly: AssemblyVersion("1.5.$WCREV$.0")]
+[assembly: AssemblyFileVersion("1.5.$WCREV$.0")]

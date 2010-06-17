@@ -1,0 +1,54 @@
+﻿RELINQ EXCEPTIONS GUIDELINE
+
+Terminology. Chunk of functionality > Subsystems > Stackframe Series > Stack Frames.
+Example 0.1) 
+    JS -> C# (i.e. public Expression JSToCSharp(String s)) = Chunk of functionality,
+    RelinqScriptParser, TypeInferenceEngine, CSharpExpressionTreeBuilder = Subsystems
+    TypeInferenceContext (method group resolution contexts are diff. from global) = Stackframe Series
+    Each recursive drilldown within the same TypeInferenceContext = Stack Frames
+
+1) Each subsystem has its own exception supertype.
+
+2) Each subsystem has its own exception type enumeration.
+
+3) Each exception should bear not more and not less properties than it's necessary for the client
+   to find out whether the crash is a software bug or he/she did something wrong.
+   In the latter case he/she should possess not more and not less information than it's necessary
+   to find out precisely what he/she should do to fix the error.
+
+4) Implementation details should be hidden within internal properties.
+   If possible, a history of the process (like for TypeInferenceEngine) helps immensely.
+
+5) It's generally a bad idea to expose a property that's apriori duplicated in an exception
+   from the parent stackframe series.
+Example 5.1)
+    ScriptBuilderException and CSharpToJSException seemingly expose the same expression: Root, tho
+    it's not true: the former references already preprocessed expression while the latter - the original one.
+
+6) If different possible errors within a subsystem do not differ in info they should expose,
+   then there's no reason to spawn subclasses.
+Example 6.1) 
+    JsonDeserializationExceptionType.NoMatchingCtor is very close to being a separate exception
+    because it needs additional data to specify precisely why existing ctors didn't satisfy it
+    tho in this particular case the required information can be inferred from other data.
+
+7) Not more and not less than one exception per stackframe series.
+Example 7.1) JS -> C# > Infer types (global) > Infer types (for Where method group): 3 exceptions
+Example 7.2) C# -> JS > Root > Node 1 > Node 2 > ... > Node N: 2 exceptions
+
+8) There should be no possibility for a non-critical exception to breach stackframe series boundaries.
+   Thus, each stackframe series should be covered by a guard try-catch block of the following format:
+   catch(XXXRelinqException){throw;} 
+   catch(Exception){throw new XXXRelinqException(Type.Unexpected);}
+
+TODOS
+
+1) After the refactoring is done, check for "throw new" substrings in production code and verify that
+   all of those throw only derivatives of RelinqException (except NotImplementedException stuff).
+
+// SCROLL DOWN
+
+2) When Ogre is implemented and has all necessary unit tests are done, extend exceptions with 
+   dumps of internal information that would be helpful for remote debugging.
+
+3) When security gets implemented, make sure that no unauthorized types and methods are exposed to the client.

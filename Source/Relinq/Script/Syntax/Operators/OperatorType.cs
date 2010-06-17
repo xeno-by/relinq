@@ -1,0 +1,29 @@
+namespace Relinq.Script.Syntax.Operators
+{
+    public enum OperatorType
+    {
+        UnaryPlus,
+        UnaryMinus,
+        OnesComplement,
+        LogicalNot,
+        Multiply,
+        Divide,
+        Modulo,
+        Add,
+        Subtract,
+        LeftShift,
+        RightShift,
+        Equal,
+        NotEqual,
+        GreaterThan,
+        LessThan,
+        GreaterThanOrEqual,
+        LessThanOrEqual,
+        And,
+        Or,
+        ExclusiveOr,
+        AndAlso,
+        OrElse,
+        Conditional,
+    }
+}

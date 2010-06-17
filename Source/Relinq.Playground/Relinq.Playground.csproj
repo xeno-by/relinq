@@ -1,0 +1,146 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{683C68A2-F28E-474C-B3F8-0D51F9C69F6F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Relinq.Playground</RootNamespace>
+    <AssemblyName>Relinq.Playground</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <PublishUrl>http://localhost/Playground/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>649, 1911, 3001, 3009</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.1.0.39271, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdPartyStuff\antlr\c# runtime\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdPartyStuff\nunit\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="ObjectMeet.Testing.Readable, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdPartyStuff\objectmeet\ObjectMeet.Testing.Readable.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Domain\Company.cs" />
+    <Compile Include="Domain\User.cs" />
+    <Compile Include="Interactive\EntryPoint.cs" />
+    <Compile Include="Interactive\RelinqInteractive.cs" />
+    <Compile Include="JavaScriptToCtxTests.cs" />
+    <Compile Include="LiftingRulesPredefinedSignaturesTests.cs" />
+    <Compile Include="LiftingRulesUserDefinedOperatorsTests.cs" />
+    <Compile Include="DotNetFrameworkTests.cs" />
+    <Compile Include="Domain\Employee.cs" />
+    <Compile Include="Domain\IDataContext.cs" />
+    <Compile Include="Domain\MyList.cs" />
+    <Compile Include="AnonymousTypeGenerationTests.cs" />
+    <Compile Include="AntlrTests.cs" />
+    <Compile Include="AppDomainScanTests.cs" />
+    <Compile Include="RelinqExceptionSupport.cs" />
+    <Compile Include="RelinqScriptBuilderExceptionsTests.cs" />
+    <Compile Include="RelinqScriptCompilerExceptionsTests1.cs" />
+    <Compile Include="RelinqScriptCompilerExceptionsTests2.cs" />
+    <Compile Include="RelinqScriptCompilerTests.cs" />
+    <Compile Include="RelinqScriptParserExceptionsTests.cs" />
+    <Compile Include="SignatureHidingTests.cs" />
+    <Compile Include="ExpressionTests.cs" />
+    <Compile Include="GenericArgsMappingTests.cs" />
+    <Compile Include="GenericsTests.cs" />
+    <Compile Include="DataContexts\TestClientDataContext.cs" />
+    <Compile Include="DataContexts\TestServerDataContext.cs" />
+    <Compile Include="MessingWithCodeGen.cs" />
+    <Compile Include="LiftingRulesScaffold.cs" />
+    <Compile Include="RelinqScriptBuilderTests.cs" />
+    <Compile Include="RelinqScriptParserTests.cs" />
+    <Compile Include="RelinqSuiteTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CompilerAlgorithmsTests.cs" />
+    <Compile Include="TestTransformationFramework.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Relinq\Relinq.csproj">
+      <Project>{1823BB22-494B-46C5-BDD5-D5B900029161}</Project>
+      <Name>Relinq</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AssemblyInfo.template" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>echo Synchronize assembly revision number with SVN revision
+"$(ProjectDir)..\ThirdPartyStuff\tortoisesVN\subwcrev.bat" "$(ProjectDir)." "$(ProjectDir)Properties\AssemblyInfo.template" "$(ProjectDir)Properties\AssemblyInfo.cs"</PreBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,1 @@
+To be honest, I have no idea under what terms this library is licensed. However, I found the sample in .NET SDK, so I guess it's free.
