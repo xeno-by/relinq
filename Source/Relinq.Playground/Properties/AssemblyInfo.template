@@ -12,7 +12,7 @@ using Relinq.Playground.Properties;
 [assembly: AssemblyCopyright("Copyright © 2008-2010 ObjectMeet")]
 
 [assembly: ComVisible(false)]
-[assembly: InternalsVisibleTo("Relinq.Playground")]
+// [assembly: InternalsVisibleTo("")]
 
 [assembly: Guid("66ce73ce-d50a-444f-ab18-82bd39460cbc")]
 [assembly: AssemblyVersion("0.0.*")]
