@@ -12,10 +12,10 @@ using Relinq.Properties;
 [assembly: AssemblyCopyright("Copyright © 2008-2010 ObjectMeet")]
 
 [assembly: ComVisible(false)]
-[assembly: InternalsVisibleTo("Relinq.Playground")]
+[assembly: InternalsVisibleTo("Relinq.Playground, PublicKey=002400000480000094000000060200000024000052534131000400000100010095f5acfe3859eb33ab81c5cd92a6ebddd157e1d1f67019fcdbf100562e27ac2599db36dd0ebe80db707d1bde395554b020fbd92de137e2877c7ec840a4e0f6f40420ab46f34f96db8270537809d94728979b8a836ed09da8211ddd3eb1d8c7ffb53fd2317fac65718755a85b9bae2e280463d01d1e0d7f0a68ec9f7c7c1501b9")]
 
 [assembly: Guid("0b5375c8-7f84-4c30-849a-537fe42f9c89")]
-[assembly: AssemblyVersion("1.5.*")]
+[assembly: AssemblyVersion("1.5.0.0")]
 [assembly: AssemblyBuiltFrom(Repository = "$"CODEBASE"$", Revision = "$REVISION$", CodebaseHash = "$CODEHASH$")]
 [assembly: AssemblyBuiltAt(Timestamp = "$TIMESTAMP$")]
 [assembly: AssemblyBuiltBy(UserHash = "$USERHASH$")]

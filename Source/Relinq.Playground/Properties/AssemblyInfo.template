@@ -15,7 +15,7 @@ using Relinq.Playground.Properties;
 // [assembly: InternalsVisibleTo("")]
 
 [assembly: Guid("66ce73ce-d50a-444f-ab18-82bd39460cbc")]
-[assembly: AssemblyVersion("0.0.*")]
+[assembly: AssemblyVersion("0.0.0.0")]
 [assembly: AssemblyBuiltFrom(Repository = "$"CODEBASE"$", Revision = "$REVISION$", CodebaseHash = "$CODEHASH$")]
 [assembly: AssemblyBuiltAt(Timestamp = "$TIMESTAMP$")]
 [assembly: AssemblyBuiltBy(UserHash = "$USERHASH$")]

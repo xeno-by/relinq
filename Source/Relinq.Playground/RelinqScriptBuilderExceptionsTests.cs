@@ -115,7 +115,7 @@ namespace Relinq.Playground
                 Assert.AreEqual("Relinq.Playground.Domain.Company", ex2_kvps["Target"]);
                 Assert.AreEqual("Relinq.Playground.Domain.Company", ex2_kvps["ActualType"]);
                 Assert.AreEqual("System.IComparable`1[Relinq.Playground.Domain.Company]", ex2_kvps["ExpectedType"]);
-                Assert.AreEqual("Serialization metadata for type 'System.IComparable`1[[Relinq.Playground.Domain.Company, Relinq.Playground, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]': IsList = False, IsDictionary = False, IsPropertyBag = False, Properties = ", ex2_kvps["Metadata"]);
+                Assert.AreEqual("Serialization metadata for type 'System.IComparable`1[[Relinq.Playground.Domain.Company, Relinq.Playground, Version=0.0.0.0, Culture=neutral, PublicKeyToken=ab3a3fb55cfc23d5]]': IsList = False, IsDictionary = False, IsPropertyBag = False, Properties = ", ex2_kvps["Metadata"]);
                 Assert.AreEqual("False", ex2_kvps["IsUnexpected"]);
 
 

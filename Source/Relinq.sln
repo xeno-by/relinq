@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Relinq", "Relinq\Relinq.csproj", "{1823BB22-494B-46C5-BDD5-D5B900029161}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Relinq.Playground", "Relinq.Playground\Relinq.Playground.csproj", "{683C68A2-F28E-474C-B3F8-0D51F9C69F6F}"
